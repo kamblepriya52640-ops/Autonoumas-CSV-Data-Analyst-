@@ -1,0 +1,10 @@
+langchain
+pandas
+langchain-experimental
+openai
+python-dotenv
+tabulate
+matplotlib
+django
+langchain-openai
+langchain-ollama
