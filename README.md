@@ -2,44 +2,38 @@
 
 This project uses LangChain's Pandas DataFrame Agent to perform natural language analysis on CSV data, integrated into a Django web application.
 
-## Features
-- LangChain Pandas Agent setup.
-- Web-based dashboard for data analysis.
-- Automatic manual verification against standard Pandas operations.
-- Sample CSV processing and visualization.
+## Project Implementation Roadmap
 
-## Setup
-1. **Install Ollama**:
-   - Download and install from [ollama.com](https://ollama.com/).
-   - Open your terminal and pull the LLM model:
-     ```bash
-     ollama pull llama3
-     ```
+This project follows a structured 4-week development cycle focused on building, securing, and refining the Pandas Agent.
 
-2. **Install Python dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Week 1: The Pandas Agent (Foundation)
 
-3. **Configure Environment**:
-   - Create or update your `.env` file:
-     ```bash
-     AI_PROVIDER=OLLAMA
-     OLLAMA_MODEL=llama3
-     ```
+Goal: Establish the core data processing engine.
 
-4. **Run migrations**:
-   ```bash
-   python manage.py migrate
-   ```
+Tasks: Set up the LangChain Pandas Dataframe Agent and load sample CSV data.
 
-5. **Run the development server**:
-   ```bash
-   python manage.py runserver
-   ```
+Validation: Verify that basic data queries (e.g., calculating means, counting rows) match manual Pandas execution.
 
-## Files
-- `sample.csv`: The target data file.
-- `agent_logic.py`: initialization of the LangChain agent.
-- `manage.py`: Django management script.
-- `analyst/`: Django app containing views and templates.
+## Week 2: Graphing Capability (Visualization)
+
+Goal: Enable visual data representation.
+
+Tasks: Integrate matplotlib via prompt engineering. Implement logic to capture, store (.png), and return URLs for generated charts.
+
+Validation: Test complex visualization requests, such as 3-month rolling averages of sales data.
+
+## Week 3: Safety & Sandboxing (Security)
+
+Goal: Secure the execution environment.
+
+Tasks: Implement sandboxing mechanisms to restrict library access and isolate the file system.
+
+Validation: Conduct security audits and attempt Prompt Injection attacks (e.g., unauthorized file deletion) to ensure system integrity.
+
+## Week 4: UI & Persistence (Finalization)
+
+Goal: Improve user experience and reliability.
+
+Tasks: Implement real-time streaming of the agent’s "Thought Process" (intermediate steps) to the UI.
+
+Validation: Perform comprehensive end-to-end testing and final polishing of the system.
